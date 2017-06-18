@@ -17,8 +17,8 @@ H = 1
 G = 0
 
 P = [0 for k in range(0, signal_size)]
-Q = 0.5
-R = 200
+Q = 0.1
+R = 100
 
 I = 1
 
@@ -35,10 +35,15 @@ for k in range(1, signal_size):
     x[k] = x[k] + G * (z[k] - H * x[k])
     P[k] = (I - G * H) * P[k]
 
-#plot
-plt.figure()
+#plot result
+plt.figure('Kalman Filter')
 plt.plot(true_val)
 plt.plot(z)
 plt.plot(x)
 plt.legend(['true value', 'raw value', 'filtered value'], loc='upper left')
+
+#Plot covariance error matrix P
+plt.figure('Covariance error matrix P')
+plt.plot(P)
+
 plt.show()

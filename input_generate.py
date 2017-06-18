@@ -19,7 +19,7 @@ for x in range(0, input_size):
     csv.append([x_input_true[x], x_input_noise[x]])
 
 #save input signal as csv file
-np.savetxt('signal_input', csv, delimiter=",", fmt='%.3f')
+np.savetxt('signal_input.csv', csv, delimiter=",", fmt='%.3f')
 
 plt.figure()
 plt.plot(x_input_true)
